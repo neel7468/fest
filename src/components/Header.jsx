@@ -60,7 +60,7 @@ const Header = ({ logo }) => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white text-xl sm:text-2xl focus:outline-none p-1"
+          className="md:hidden text-white text-xl sm:text-2xl focus:outline-none p-2 mr-1 bg-primary/20 rounded-md hover:bg-primary/40 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
