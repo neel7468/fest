@@ -54,7 +54,7 @@ const Hero = ({ logo }) => {
   }, []);
 
   return (
-    <section className="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden py-16 md:py-0">
       {/* Background Image with Overlay - Increased size with scale */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed z-0 scale-125 transition-transform duration-30000 ease-linear transform-gpu"
@@ -75,43 +75,43 @@ const Hero = ({ logo }) => {
       </div>
       
       {/* Hero Content */}
-      <div className="relative z-30 max-w-3xl px-8" data-aos="fade-up" data-aos-duration="1000">
+      <div className="relative z-30 max-w-3xl px-4 sm:px-8" data-aos="fade-up" data-aos-duration="1000">
         <div className="flex flex-col items-center mb-6">
           <div className="relative">
-            <img src={logo} alt="Anandadhara Logo" className="w-56 md:w-64 mb-2" />
-            <div className="absolute -right-20 top-10 flex">
+            <img src={logo} alt="Anandadhara Logo" className="w-40 sm:w-48 md:w-56 lg:w-64 mb-2" />
+            <div className="absolute -right-12 sm:-right-16 md:-right-20 top-6 sm:top-8 md:top-10 flex">
               {/* Clean, white 2k25 text with beautiful animation */}
               <div className="relative">
-                <span className="text-2xl text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0s' }}>2</span>
-                <span className="text-4xl text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.2s' }}>k</span>
-                <span className="text-5xl font-bold text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.4s' }}>2</span>
-                <span className="text-7xl font-bold text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.6s' }}>5</span>
+                <span className="text-xl sm:text-2xl text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0s' }}>2</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.2s' }}>k</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.4s' }}>2</span>
+                <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white animate-wave-float" style={{ fontFamily: 'Poppins, sans-serif', animationDelay: '0.6s' }}>5</span>
               </div>
             </div>
           </div>
-          <p className="text-lg md:text-xl mt-4 mb-8 text-shadow-lg">Join us for an exciting celebration of music, dance, and culture!</p>
+          <p className="text-base sm:text-lg md:text-xl mt-4 mb-6 md:mb-8 text-shadow-lg px-2">Join us for an exciting celebration of music, dance, and culture!</p>
         </div>
         
         {/* Countdown Timer */}
-        <div className="flex justify-center items-center gap-2 md:gap-4 mb-10">
+        <div className="flex justify-center items-center gap-1 sm:gap-2 md:gap-4 mb-8 md:mb-10">
           <div className="countdown-box">
-            <div className="text-2xl md:text-3xl font-bold">{String(countdown.days).padStart(2, '0')}</div>
-            <div className="text-xs md:text-sm">Days</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold">{String(countdown.days).padStart(2, '0')}</div>
+            <div className="text-[10px] sm:text-xs md:text-sm">Days</div>
           </div>
-          <div className="text-2xl font-bold">:</div>
+          <div className="text-xl sm:text-2xl font-bold">:</div>
           <div className="countdown-box">
-            <div className="text-2xl md:text-3xl font-bold">{String(countdown.hours).padStart(2, '0')}</div>
-            <div className="text-xs md:text-sm">Hours</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold">{String(countdown.hours).padStart(2, '0')}</div>
+            <div className="text-[10px] sm:text-xs md:text-sm">Hours</div>
           </div>
-          <div className="text-2xl font-bold">:</div>
+          <div className="text-xl sm:text-2xl font-bold">:</div>
           <div className="countdown-box">
-            <div className="text-2xl md:text-3xl font-bold">{String(countdown.minutes).padStart(2, '0')}</div>
-            <div className="text-xs md:text-sm">Minutes</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold">{String(countdown.minutes).padStart(2, '0')}</div>
+            <div className="text-[10px] sm:text-xs md:text-sm">Minutes</div>
           </div>
-          <div className="text-2xl font-bold">:</div>
+          <div className="text-xl sm:text-2xl font-bold">:</div>
           <div className="countdown-box">
-            <div className="text-2xl md:text-3xl font-bold">{String(countdown.seconds).padStart(2, '0')}</div>
-            <div className="text-xs md:text-sm">Seconds</div>
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold">{String(countdown.seconds).padStart(2, '0')}</div>
+            <div className="text-[10px] sm:text-xs md:text-sm">Seconds</div>
           </div>
         </div>
         
@@ -119,7 +119,7 @@ const Hero = ({ logo }) => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
             href="#events" 
-            className="group inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-1 overflow-hidden relative"
+            className="group inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary to-secondary text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-1 overflow-hidden relative"
           >
             <span className="relative z-10 flex items-center">
               <FontAwesomeIcon icon={faCalendarAlt} className="mr-2 transition-transform duration-300 group-hover:rotate-12" />
@@ -131,7 +131,7 @@ const Hero = ({ logo }) => {
           
           <Link 
             to="/all-events" 
-            className="group inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-primary text-white font-semibold rounded-full transition-all duration-300 hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:border-secondary hover:shadow-lg hover:shadow-secondary/20 hover:-translate-y-1 overflow-hidden relative"
+            className="group inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3 bg-transparent border-2 border-primary text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300 hover:bg-gradient-to-r hover:from-primary/20 hover:to-secondary/20 hover:border-secondary hover:shadow-lg hover:shadow-secondary/20 hover:-translate-y-1 overflow-hidden relative"
             data-aos="fade-up" 
             data-aos-delay="200"
           >
