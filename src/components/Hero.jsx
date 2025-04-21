@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import heroBg from '../assets/i.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCalendarAlt, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = ({ logo }) => {
   const [countdown, setCountdown] = useState({
@@ -14,6 +14,8 @@ const Hero = ({ logo }) => {
   
   // Add state for spotlight position
   const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50 });
+  // Add state for mobile menu
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Set the event date (March 15, 2025)
@@ -55,6 +57,27 @@ const Hero = ({ logo }) => {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden py-16 md:py-0">
+      {/* Mobile Menu Button - Only visible on mobile */}
+      <button 
+        className="md:hidden fixed top-4 right-4 z-50 text-white text-2xl bg-black/30 p-2 rounded-full"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      
+      {/* Mobile Menu Panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 bg-black/90 z-40 flex items-center justify-center">
+          <div className="flex flex-col items-center space-y-6">
+            <Link to="/" className="text-2xl text-white hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link to="/schedule" className="text-2xl text-white hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Schedule</Link>
+            <Link to="/gallery" className="text-2xl text-white hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+            <Link to="/all-events" className="text-2xl text-white hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Events</Link>
+            <Link to="/contact" className="text-2xl text-white hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          </div>
+        </div>
+      )}
+
       {/* Background Image with Overlay - Increased size with scale */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed z-0 scale-125 transition-transform duration-30000 ease-linear transform-gpu"

@@ -22,37 +22,37 @@ const Header = ({ logo }) => {
   }, []);
   
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-3 sm:py-4'}`}>
+      <div className="w-[95%] mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Anandadhara Logo" className="h-12" />
+          <img src={logo} alt="Anandadhara Logo" className="h-8 sm:h-10 md:h-12" />
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
           <NavLink to="/" className={({isActive}) => 
-            `text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+            `text-white hover:text-primary transition-colors text-sm lg:text-base ${isActive ? 'text-primary font-medium' : ''}`
           }>
             Home
           </NavLink>
           <NavLink to="/schedule" className={({isActive}) => 
-            `text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+            `text-white hover:text-primary transition-colors text-sm lg:text-base ${isActive ? 'text-primary font-medium' : ''}`
           }>
             Schedule
           </NavLink>
           <NavLink to="/gallery" className={({isActive}) => 
-            `text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+            `text-white hover:text-primary transition-colors text-sm lg:text-base ${isActive ? 'text-primary font-medium' : ''}`
           }>
             Gallery
           </NavLink>
           <NavLink to="/all-events" className={({isActive}) => 
-            `text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+            `text-white hover:text-primary transition-colors text-sm lg:text-base ${isActive ? 'text-primary font-medium' : ''}`
           }>
             Events
           </NavLink>
           <NavLink to="/contact" className={({isActive}) => 
-            `text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+            `text-white hover:text-primary transition-colors text-sm lg:text-base ${isActive ? 'text-primary font-medium' : ''}`
           }>
             Contact
           </NavLink>
@@ -60,8 +60,9 @@ const Header = ({ logo }) => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white text-2xl focus:outline-none"
+          className="md:hidden text-white text-xl sm:text-2xl focus:outline-none p-1"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
         </button>
@@ -69,11 +70,11 @@ const Header = ({ logo }) => {
       
       {/* Mobile Navigation */}
       <div className={`md:hidden fixed inset-0 bg-black/95 z-50 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8">
           <NavLink 
             to="/" 
             className={({isActive}) => 
-              `text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+              `text-xl sm:text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
             }
             onClick={() => setIsMenuOpen(false)}
           >
@@ -82,7 +83,7 @@ const Header = ({ logo }) => {
           <NavLink 
             to="/schedule" 
             className={({isActive}) => 
-              `text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+              `text-xl sm:text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
             }
             onClick={() => setIsMenuOpen(false)}
           >
@@ -91,7 +92,7 @@ const Header = ({ logo }) => {
           <NavLink 
             to="/gallery" 
             className={({isActive}) => 
-              `text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+              `text-xl sm:text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
             }
             onClick={() => setIsMenuOpen(false)}
           >
@@ -100,7 +101,7 @@ const Header = ({ logo }) => {
           <NavLink 
             to="/all-events" 
             className={({isActive}) => 
-              `text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+              `text-xl sm:text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
             }
             onClick={() => setIsMenuOpen(false)}
           >
@@ -109,7 +110,7 @@ const Header = ({ logo }) => {
           <NavLink 
             to="/contact" 
             className={({isActive}) => 
-              `text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
+              `text-xl sm:text-2xl text-white hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : ''}`
             }
             onClick={() => setIsMenuOpen(false)}
           >
