@@ -58,9 +58,9 @@ const Header = ({ logo }) => {
           </NavLink>
         </nav>
         
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Enhanced for better visibility */}
         <button 
-          className="md:hidden text-white text-xl sm:text-2xl focus:outline-none p-2 mr-1 bg-primary/20 rounded-md hover:bg-primary/40 transition-colors"
+          className="md:hidden text-white text-xl sm:text-2xl focus:outline-none p-2 bg-primary/30 backdrop-blur-sm rounded-md hover:bg-primary/50 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -68,8 +68,18 @@ const Header = ({ logo }) => {
         </button>
       </div>
       
-      {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 bg-black/95 z-50 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* Mobile Navigation - Improved animation */}
+      <div className={`md:hidden fixed inset-0 bg-black/95 z-50 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        {/* Close button at top */}
+        <div className="w-[95%] mx-auto flex justify-end pt-3 sm:pt-4">
+          <button 
+            className="text-white text-xl sm:text-2xl p-2 bg-primary/30 rounded-md hover:bg-primary/50 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+        </div>
         <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8">
           <NavLink 
             to="/" 
